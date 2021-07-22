@@ -3,9 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-    <p>
-      header works!
-    </p>
+  <div class="navbar is-dark">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="assets/img/angular-logo.png">
+      </a>
+    </div>
+  </div>
   `,
   styles: [
   ]
