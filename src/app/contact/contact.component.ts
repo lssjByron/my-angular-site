@@ -14,17 +14,37 @@ import { Component, OnInit } from '@angular/core';
     <section class="section">
       <div class="container">
         <!-- contact form -->
-        <form (ngSubmit)="submitForm()">
+        <form (ngSubmit)="submitForm()" #contactForm="ngForm">
           <!-- name -->
           <div class="field">
             <label class="label">Name</label>
-            <input type="text" name="name" class="input" [(ngModel)]="name">
+            <input 
+            type="text" 
+            name="name" 
+            class="input" 
+            [(ngModel)]="name" 
+            #nameInput="ngModel"
+            required>
+            <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
+              Your name is required
+            </div>
           </div>
 
           <!-- email -->
           <div class="field">
             <label class="label">Email</label>
-            <input type="email" name="email" class="input" [(ngModel)]="email">
+            <input 
+            type="email" 
+            name="email" 
+            class="input" 
+            [(ngModel)]="email"
+            #emailInput="ngModel"
+            required
+            email>
+
+            <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
+              Your email is required and needs to be a valid email
+            </div>
           </div>
 
           <!-- message -->
@@ -34,7 +54,10 @@ import { Component, OnInit } from '@angular/core';
           </div>
 
           <!-- submit button -->
-          <button type="submit" class="button is-large is-warning">
+          <button 
+          type="submit" 
+          class="button is-large is-warning"
+          [disabled]="contactForm.invalid">
             Send!
           </button>
         </form>
