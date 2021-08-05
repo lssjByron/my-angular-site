@@ -15,5 +15,7 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'my-angular-site';
+  
+  constructor() {}
+
 }
