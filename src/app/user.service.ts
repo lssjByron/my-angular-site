@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+// Services are solely meant to connect to an external API
+// Components are used to grab those services, use those services
+// and then display the data in the templates
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +16,7 @@ export class UserService {
    * Get all users
    */
   getUsers(){
-    return this.http.get(`${this.apiUrl}?per_page=20`);
+    return this.http.get(`${this.apiUrl}?per_page=10`);
   }
 
   /**
