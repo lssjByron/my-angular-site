@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/core/user.service';
 
 // Angular HTML: 
 // [] property bindings (eg. [src]), binds to an attribute.
