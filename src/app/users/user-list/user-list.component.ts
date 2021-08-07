@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/core/user.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 // async (a pipe) in ngFor can be used to unwrap observable (subscribe is like promise but called observable)
 // (initially had to call this.userService.getUsers().subscribe(users => {this.users = users;})  )
